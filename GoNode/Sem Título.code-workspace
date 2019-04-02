@@ -1,0 +1,21 @@
+{
+  "folders": [
+	{
+		"path": "Modulo1"
+	},
+	{
+		"name": "SensorsMV",
+		"path": "/Users/danielcarloss7/Documents/PlatformIO/Projects/SensorsMV"
+	},
+	{
+		"name": "EspHttpGet",
+		"path": "/Users/danielcarloss7/Documents/PlatformIO/Projects/EspHttpGet"
+	}
+],
+  "settings": {
+    "terminal.integrated.env.osx": {
+      "PATH": "/Users/danielcarloss7/.platformio/penv/bin:/Users/danielcarloss7/.platformio/penv:/Users/danielcarloss7/.platformio/penv/bin:/Users/danielcarloss7/.platformio/penv:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin",
+      "PLATFORMIO_CALLER": "vscode"
+    }
+  }
+}

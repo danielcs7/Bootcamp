@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Temperature with Nodejs</title>
+  </head>
+  <body>
+    <h1>Esp8266-NODEJS</h1>
+
+    <canvas id="myCanvas"> </canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script>
+      const socket = io();
+
+      let counter = 0;
+      socket.on("arduino:data", function(dataSerial) {
+        console.log(dataSerial);
+        //aqui aparece no log do browser
+        //console.log(dato);
+        //------------------------------
+        myChart.data.labels.push(counter);
+        myChart.data.datasets.forEach(dataset => {
+          dataset.data.push(dataSerial.value);
+        });
+        counter++;
+        myChart.update();
+      });
+
+      var ctx = document.getElementById("myCanvas").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["Serial"],
+          datasets: [
+            {
+              label: "Serial",
+              backgroundColor: "rgb(52, 73, 94)",
+              borderColor: "rgb(41, 128, 185)",
+              dato: []
+            }
+          ]
+        },
+        options: {}
+      });
+    </script>
+  </body>
+</html>
